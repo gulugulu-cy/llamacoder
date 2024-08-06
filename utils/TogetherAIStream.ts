@@ -25,7 +25,7 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
   let res;
 
   if (process.env.HELICONE_API_KEY) {
-    res = await fetch("https://together.helicone.ai/v1/chat/completions", {
+    res = await fetch("https://test-api2.gpt302.com/bot/v1/chat/completions", {
       headers: {
         "Content-Type": "application/json",
         "Helicone-Auth": `Bearer ${process.env.HELICONE_API_KEY}`,
@@ -35,7 +35,7 @@ export async function TogetherAIStream(payload: TogetherAIStreamPayload) {
       body: JSON.stringify(payload),
     });
   } else {
-    res = await fetch("https://api.together.xyz/v1/chat/completions", {
+    res = await fetch("https://test-api2.gpt302.com/bot/v1/chat/completions", {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${process.env.TOGETHER_API_KEY ?? ""}`,
